@@ -1,0 +1,68 @@
+{
+    "welcome_page": {
+        "header_title": "ਹੈਲਥਕੇਅਰ ਕਿਓਸਕ",
+        "main_heading": "ਹੈਲਥਕੇਅਰ ਕਿਓਸਕ ਵਿੱਚ ਸਵਾਗਤ ਹੈ",
+        "main_subheading": "ਤੇਜ਼ ਅਤੇ ਆਸਾਨ ਸਿਹਤ ਜਾਂਚ ਲਈ ਤੁਹਾਡਾ ਇੱਕ ਹੀ ਹੱਲ।",
+        "language_label": "ਭਾਸ਼ਾ ਚੁਣੋ:",
+        "language_options": [
+            "ਅੰਗਰੇਜ਼ੀ",
+            "ਹਿੰਦੀ",
+            "ਸਪੈਨਿਸ਼",
+            "ਫ੍ਰੈਂਚ"
+        ],
+        "speak_button": "ਬੋਲੋ",
+        "start_health_check_button": "ਸਿਹਤ ਜਾਂਚ ਸ਼ੁਰੂ ਕਰੋ",
+        "footer_text": "© 2025 ਹੈਲਥਕੇਅਰ ਕਿਓਸਕ. ਸਾਰੇ ਹੱਕ ਸੁਰੱਖਿਅਤ।"
+    },
+    "patient_selection_page": {
+        "header_title": "ਹੈਲਥਕੇਅਰ ਕਿਓਸਕ",
+        "main_heading": "ਹੈਲਥਕੇਅਰ ਕਿਓਸਕ ਵਿੱਚ ਸਵਾਗਤ ਹੈ",
+        "subheading": "ਕਿਰਪਾ ਕਰਕੇ ਅੱਗੇ ਵਧਣ ਲਈ ਆਪਣਾ ਵਿਕਲਪ ਚੁਣੋ",
+        "new_user_button": "ਨਵਾਂ ਉਪਭੋਗੀ",
+        "existing_user_button": "ਮੌਜੂਦਾ ਉਪਭੋਗੀ",
+        "footer_text": "© 2025 ਹੈਲਥਕੇਅਰ ਕਿਓਸਕ. ਸਾਰੇ ਹੱਕ ਸੁਰੱਖਿਅਤ।"
+    },
+    "registration_page": {
+        "page_title": "ਹੈਲਥਕੇਅਰ ਕਿਓਸਕ ਮਰੀਜ਼ ਰਜਿਸਟ੍ਰੇਸ਼ਨ",
+        "patient_id_label": "ਮਰੀਜ਼ ਆਈਡੀ:",
+        "form_labels": {
+            "name": "ਨਾਮ",
+            "gender": "ਲਿੰਗ",
+            "age": "ਉਮਰ",
+            "phone": "ਫੋਨ",
+            "relative_phone": "ਵਿਕਲਪਿਕ ਫੋਨ",
+            "email": "ਈਮੇਲ",
+            "address": "ਪਤਾ"
+        },
+        "gender_options": [
+            "ਲਿੰਗ ਚੁਣੋ",
+            "ਪੁਰਸ਼",
+            "ਔਰਤ",
+            "ਹੋਰ"
+        ],
+        "submit_button": "ਜਮ੍ਹਾਂ ਕਰੋ",
+        "validation_errors": {
+            "required": "ਲੋੜੀਂਦਾ",
+            "age_positive_integer": "ਇਹ ਇੱਕ ਸਕਾਰਾਤਮਕ ਪੂਰਨ ਅੰਕ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ",
+            "phone_invalid": "ਅਮਾਨਯ ਫੋਨ ਨੰਬਰ",
+            "email_invalid": "ਅਮਾਨਯ ਈਮੇਲ ਫਾਰਮੈਟ"
+        }
+    },
+    "patient_id_page": {
+        "page_title": "ਮੌਜੂਦਾ ਮਰੀਜ਼ – ਆਪਣੀ ਵਿਲੱਖਣ ਮਰੀਜ਼ ਆਈਡੀ ਦਰਜ ਕਰੋ",
+        "patient_id_placeholder": "ਮਰੀਜ਼ ਆਈਡੀ ਦਰਜ ਕਰੋ",
+        "continue_button": "ਜਾਰੀ ਰੱਖੋ",
+        "validation_errors": {
+            "required": "ਮਰੀਜ਼ ਆਈਡੀ ਲੋੜੀਂਦੀ ਹੈ",
+            "invalid_format": "ਮਰੀਜ਼ ਆਈਡੀ ਵਿੱਚ ਸਿਰਫ ਅੱਖਰ ਅਤੇ ਅੰਕ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ"
+        }
+    },
+    "doctor_ai_selection_page": {
+        "header_title": "ਹੈਲਥਕੇਅਰ ਕਿਓਸਕ",
+        "main_heading": "ਹੈਲਥਕੇਅਰ ਕਿਓਸਕ ਵਿੱਚ ਸਵਾਗਤ ਹੈ",
+        "subheading": "ਕਿਰਪਾ ਕਰਕੇ ਆਪਣਾ ਸਲਾਹਕਾਰ ਵਿਕਲਪ ਚੁਣੋ",
+        "ai_consultation_button": "AI ਨਾਲ",
+        "doctor_consultation_button": "ਡਾਕਟਰ ਨਾਲ",
+        "footer_text": "© 2025 ਹੈਲਥਕੇਅਰ ਕਿਓਸਕ. ਸਾਰੇ ਹੱਕ ਸੁਰੱਖਿਅਤ।"
+    }
+}

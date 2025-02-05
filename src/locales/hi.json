@@ -1,0 +1,68 @@
+{
+    "welcome_page": {
+        "header_title": "हेल्थकेयर कियोस्क",
+        "main_heading": "हेल्थकेयर कियोस्क में स्वागत है",
+        "main_subheading": "त्वरित और आसान स्वास्थ्य जांच के लिए आपका एकमात्र समाधान।",
+        "language_label": "भाषा चुनें:",
+        "language_options": [
+            "अंग्रेज़ी",
+            "हिंदी",
+            "स्पैनिश",
+            "फ्रेंच"
+        ],
+        "speak_button": "बोलें",
+        "start_health_check_button": "स्वास्थ्य जांच शुरू करें",
+        "footer_text": "© 2025 हेल्थकेयर कियोस्क। सर्वाधिकार सुरक्षित।"
+    },
+    "patient_selection_page": {
+        "header_title": "हेल्थकेयर कियोस्क",
+        "main_heading": "हेल्थकेयर कियोस्क में स्वागत है",
+        "subheading": "कृपया जारी रखने के लिए अपना विकल्प चुनें",
+        "new_user_button": "नया उपयोगकर्ता",
+        "existing_user_button": "मौजूदा उपयोगकर्ता",
+        "footer_text": "© 2025 हेल्थकेयर कियोस्क। सर्वाधिकार सुरक्षित।"
+    },
+    "registration_page": {
+        "page_title": "हेल्थकेयर कियोस्क मरीज पंजीकरण",
+        "patient_id_label": "मरीज आईडी:",
+        "form_labels": {
+            "name": "नाम",
+            "gender": "लिंग",
+            "age": "आयु",
+            "phone": "फोन",
+            "relative_phone": "वैकल्पिक फोन",
+            "email": "ईमेल",
+            "address": "पता"
+        },
+        "gender_options": [
+            "लिंग चुनें",
+            "पुरुष",
+            "महिला",
+            "अन्य"
+        ],
+        "submit_button": "जमा करें",
+        "validation_errors": {
+            "required": "आवश्यक",
+            "age_positive_integer": "यह सकारात्मक पूर्णांक होना चाहिए",
+            "phone_invalid": "अमान्य फोन नंबर",
+            "email_invalid": "अमान्य ईमेल प्रारूप"
+        }
+    },
+    "patient_id_page": {
+        "page_title": "मौजूदा मरीज – अपना अनूठा मरीज आईडी दर्ज करें",
+        "patient_id_placeholder": "मरीज आईडी दर्ज करें",
+        "continue_button": "जारी रखें",
+        "validation_errors": {
+            "required": "मरीज आईडी आवश्यक है",
+            "invalid_format": "मरीज आईडी में केवल अक्षर और संख्या होनी चाहिए"
+        }
+    },
+    "doctor_ai_selection_page": {
+        "header_title": "हेल्थकेयर कियोस्क",
+        "main_heading": "हेल्थकेयर कियोस्क में स्वागत है",
+        "subheading": "कृपया अपनी परामर्श विकल्प का चयन करें",
+        "ai_consultation_button": "AI के साथ",
+        "doctor_consultation_button": "डॉक्टर के साथ",
+        "footer_text": "© 2025 हेल्थकेयर कियोस्क। सर्वाधिकार सुरक्षित।"
+    }
+}

@@ -1,0 +1,68 @@
+{
+    "welcome_page": {
+        "header_title": "हेल्थकेअर किओस्क",
+        "main_heading": "हेल्थकेअर किओस्क मध्ये स्वागत आहे",
+        "main_subheading": "झपाट्याने आणि सोप्या आरोग्य तपासणीसाठी तुमचं एकाच ठिकाणी समाधान.",
+        "language_label": "भाषा निवडा:",
+        "language_options": [
+            "इंग्रजी",
+            "हिंदी",
+            "स्पॅनिश",
+            "फ्रेंच"
+        ],
+        "speak_button": "बोल",
+        "start_health_check_button": "आरोग्य तपासणी सुरू करा",
+        "footer_text": "© 2025 हेल्थकेअर किओस्क. सर्व हक्क राखीव."
+    },
+    "patient_selection_page": {
+        "header_title": "हेल्थकेअर किओस्क",
+        "main_heading": "हेल्थकेअर किओस्क मध्ये स्वागत आहे",
+        "subheading": "कृपया पुढे जाण्यासाठी आपला पर्याय निवडा",
+        "new_user_button": "नवा वापरकर्ता",
+        "existing_user_button": "मौजूदा वापरकर्ता",
+        "footer_text": "© 2025 हेल्थकेअर किओस्क. सर्व हक्क राखीव."
+    },
+    "registration_page": {
+        "page_title": "हेल्थकेअर किओस्क रुग्ण नोंदणी",
+        "patient_id_label": "रुग्ण आयडी:",
+        "form_labels": {
+            "name": "नाव",
+            "gender": "लिंग",
+            "age": "वय",
+            "phone": "फोन",
+            "relative_phone": "पर्यायी फोन",
+            "email": "ईमेल",
+            "address": "पत्ता"
+        },
+        "gender_options": [
+            "लिंग निवडा",
+            "पुरुष",
+            "महिला",
+            "इतर"
+        ],
+        "submit_button": "सबमिट करा",
+        "validation_errors": {
+            "required": "आवश्यक",
+            "age_positive_integer": "तो एक सकारात्मक पूर्णांक असावा",
+            "phone_invalid": "अवैध फोन नंबर",
+            "email_invalid": "अवैध ईमेल प्रारूप"
+        }
+    },
+    "patient_id_page": {
+        "page_title": "मौजूदा रुग्ण – आपला अद्वितीय रुग्ण आयडी प्रविष्ट करा",
+        "patient_id_placeholder": "रुग्ण आयडी प्रविष्ट करा",
+        "continue_button": "सुरू ठेवा",
+        "validation_errors": {
+            "required": "रुग्ण आयडी आवश्यक आहे",
+            "invalid_format": "रुग्ण आयडी मध्ये फक्त अक्षरे आणि संख्याच असाव्यात"
+        }
+    },
+    "doctor_ai_selection_page": {
+        "header_title": "हेल्थकेअर किओस्क",
+        "main_heading": "हेल्थकेअर किओस्क मध्ये स्वागत आहे",
+        "subheading": "कृपया आपला परामर्श पर्याय निवडा",
+        "ai_consultation_button": "AI सह",
+        "doctor_consultation_button": "डॉक्टर सह",
+        "footer_text": "© 2025 हेल्थकेअर किओस्क. सर्व हक्क राखीव."
+    }
+}

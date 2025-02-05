@@ -1,0 +1,68 @@
+{
+    "welcome_page": {
+        "header_title": "હેલ્થકેર કિયોસ્ક",
+        "main_heading": "હેલ્થકેર કિયોસ્કમાં સ્વાગત છે",
+        "main_subheading": "ઝડપી અને સહેલાઈથી આરોગ્ય ચકાસણી માટે તમારું એકમાત્ર ઉકેલ.",
+        "language_label": "ભાષા પસંદ કરો:",
+        "language_options": [
+            "અંગ્રેજી",
+            "હિન્દી",
+            "સ્પેનિશ",
+            "ફ્રેંચ"
+        ],
+        "speak_button": "બોલો",
+        "start_health_check_button": "આરોગ્ય ચકાસણી શરૂ કરો",
+        "footer_text": "© 2025 હેલ્થકેર કિયોસ્ક. સર્વાધિકારો સંગ્રહિત."
+    },
+    "patient_selection_page": {
+        "header_title": "હેલ્થકેર કિયોસ્ક",
+        "main_heading": "હેલ્થકેર કિયોસ્કમાં સ્વાગત છે",
+        "subheading": "કૃપા કરીને આગળ વધવા માટે તમારો વિકલ્પ પસંદ કરો",
+        "new_user_button": "નવી વપરાશકર્તા",
+        "existing_user_button": "જૂની વપરાશકર્તા",
+        "footer_text": "© 2025 હેલ્થકેર કિયોસ્ક. સર્વાધિકારો સંગ્રહિત."
+    },
+    "registration_page": {
+        "page_title": "હેલ્થકેર કિયોસ્ક દર્દી નોંધણી",
+        "patient_id_label": "દર્દી આઈડી:",
+        "form_labels": {
+            "name": "નામ",
+            "gender": "લિંગ",
+            "age": "આયુ",
+            "phone": "ફોન",
+            "relative_phone": "વૈકલ્પિક ફોન",
+            "email": "ઇમેઇલ",
+            "address": "સરનામું"
+        },
+        "gender_options": [
+            "લિંગ પસંદ કરો",
+            "પુરૂષ",
+            "મહિલા",
+            "બીજું"
+        ],
+        "submit_button": "જમા કરો",
+        "validation_errors": {
+            "required": "આવશ્યક",
+            "age_positive_integer": "એ પોઝિટિવ પૂર્ણાંક હોવું જોઈએ",
+            "phone_invalid": "અમાન્ય ફોન નંબર",
+            "email_invalid": "અમાન્ય ઇમેઇલ ફોર્મેટ"
+        }
+    },
+    "patient_id_page": {
+        "page_title": "જૂના દર્દી – તમારો અનોખો દર્દી આઈડી દાખલ કરો",
+        "patient_id_placeholder": "દર્દી આઈડી દાખલ કરો",
+        "continue_button": "જારી રાખો",
+        "validation_errors": {
+            "required": "દર્દી આઈડી જરૂરી છે",
+            "invalid_format": "દર્દી આઈડીમાં માત્ર અક્ષર અને સંખ્યાઓ હોવી જોઈએ"
+        }
+    },
+    "doctor_ai_selection_page": {
+        "header_title": "હેલ્થકેર કિયોસ્ક",
+        "main_heading": "હેલ્થકેર કિયોસ્કમાં સ્વાગત છે",
+        "subheading": "કૃપા કરીને તમારી પરામર્શ વિકલ્પ પસંદ કરો",
+        "ai_consultation_button": "AI સાથે",
+        "doctor_consultation_button": "ડૉક્ટર સાથે",
+        "footer_text": "© 2025 હેલ્થકેર કિયોસ્ક. સર્વાધિકારો સંગ્રહિત."
+    }
+}

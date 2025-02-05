@@ -1,0 +1,68 @@
+{
+    "welcome_page": {
+        "header_title": "HealthCare Kiosk",
+        "main_heading": "Welcome to HealthCare Kiosk",
+        "main_subheading": "Your one-stop solution for quick and easy health checkups.",
+        "language_label": "Select Language:",
+        "language_options": [
+            "English",
+            "Hindi",
+            "Spanish",
+            "French"
+        ],
+        "speak_button": "Speak",
+        "start_health_check_button": "Start Health Check",
+        "footer_text": "© 2025 HealthCare Kiosk. All rights reserved."
+    },
+    "patient_selection_page": {
+        "header_title": "HealthCare Kiosk",
+        "main_heading": "Welcome to HealthCare Kiosk",
+        "subheading": "Please select your option to continue",
+        "new_user_button": "New User",
+        "existing_user_button": "Existing User",
+        "footer_text": "© 2025 HealthCare Kiosk. All rights reserved."
+    },
+    "registration_page": {
+        "page_title": "Healthcare Kiosk Patient Registration",
+        "patient_id_label": "Patient ID:",
+        "form_labels": {
+            "name": "Name",
+            "gender": "Gender",
+            "age": "Age",
+            "phone": "Phone",
+            "relative_phone": "Alternate Phone",
+            "email": "Email",
+            "address": "Address"
+        },
+        "gender_options": [
+            "Select gender",
+            "Male",
+            "Female",
+            "Other"
+        ],
+        "submit_button": "Submit",
+        "validation_errors": {
+            "required": "Required",
+            "age_positive_integer": "Must be a positive integer",
+            "phone_invalid": "Invalid phone number",
+            "email_invalid": "Invalid email format"
+        }
+    },
+    "patient_id_page": {
+        "page_title": "Existing Patient – Enter Your Unique Patient ID",
+        "patient_id_placeholder": "Enter Patient ID",
+        "continue_button": "Continue",
+        "validation_errors": {
+            "required": "Patient ID is required",
+            "invalid_format": "Patient ID should contain only letters and numbers"
+        }
+    },
+    "doctor_ai_selection_page": {
+        "header_title": "HealthCare Kiosk",
+        "main_heading": "Welcome to HealthCare Kiosk",
+        "subheading": "Please select your consultation option",
+        "ai_consultation_button": "With AI",
+        "doctor_consultation_button": "With Doctor",
+        "footer_text": "© 2025 HealthCare Kiosk. All rights reserved."
+    }
+}
