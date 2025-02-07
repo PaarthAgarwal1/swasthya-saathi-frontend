@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import { useTranslation } from 'react-i18next';
 import useTextToSpeech from '../../components/TextToSpeech';
 import { useEffect } from 'react';
+import axiosInstance from '../../utils/axiosInstance';
 
 
 const Registration = () => {
@@ -12,9 +13,9 @@ const Registration = () => {
   const speakText = useTextToSpeech(i18n.language); // Initialize text-to-speech hook
 
   useEffect(() => {
-      // Speak the main heading and subheading on page load
-      speakText(`${t('registration_page.page_title')}`);
-    }, [speakText, t, i18n.language]);
+    // Speak the main heading and subheading on page load
+    speakText(`${t('registration_page.page_title')}`);
+  }, [speakText, t, i18n.language]);
 
 
   const navigate = useNavigate();
@@ -26,9 +27,9 @@ const Registration = () => {
     gender: '',
     age: '',
     phone: '',
-    relativePhone: '000000000',
+    alternativeNumber: '000000000',
     email: '',
-    address: ''
+    address: '',
   };
 
   const validationSchema = Yup.object({
@@ -36,14 +37,21 @@ const Registration = () => {
     gender: Yup.string().required(t('registration_page.validation_errors.required')),
     age: Yup.number().required(t('registration_page.validation_errors.required')).positive().integer(),
     phone: Yup.string().required(t('registration_page.validation_errors.required')),
-    alternatePhone: Yup.string().matches(/^\d{10}$/, t('registration_page.validation_errors.phone_invalid')),
+    alternateNumber: Yup.string().matches(/^\d{10}$/, t('registration_page.validation_errors.phone_invalid')),
     email: Yup.string().email(t('registration_page.validation_errors.email_invalid')).required(t('registration_page.validation_errors.required')),
     address: Yup.string().required(t('registration_page.validation_errors.required'))
   });
 
-  const onSubmit = (values) => {
-    console.log('Form data', values);
-    navigate('/doctor-ai');
+  const onSubmit = async (values) => {
+    const language = localStorage.getItem('selectedLanguage') || 'en'; // Retrieve language from local storage or set default to 'en'
+    const formData = { ...values, language };
+    console.log('Form data', formData);
+    try {
+      const res = await axiosInstance.post('/patient/save', formData);
+      navigate('/doctor-ai');
+    } catch (error) {
+      console.error('Error', error);
+    }
   };
 
   return (
@@ -143,10 +151,10 @@ const Registration = () => {
                 </label>
                 <Field
                   type="text"
-                  name="relativePhone"
+                  name="alternativeNumber"
                   className="w-full p-3 border rounded-lg"
                 />
-                <ErrorMessage name="relativePhone" component="div" className="text-red-500" />
+                <ErrorMessage name="alternativeNumber" component="div" className="text-red-500" />
               </div>
 
               <div>

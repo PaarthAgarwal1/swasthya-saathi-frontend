@@ -51,6 +51,7 @@
     "patient_id_page": {
         "page_title": "ਮੌਜੂਦਾ ਮਰੀਜ਼ – ਆਪਣੀ ਵਿਲੱਖਣ ਮਰੀਜ਼ ਆਈਡੀ ਦਰਜ ਕਰੋ",
         "patient_id_placeholder": "ਮਰੀਜ਼ ਆਈਡੀ ਦਰਜ ਕਰੋ",
+        "phone_placeholder": "ਫੋਨ ਨੰਬਰ ਦਾਖਲ ਕਰੋ",
         "continue_button": "ਜਾਰੀ ਰੱਖੋ",
         "validation_errors": {
             "required": "ਮਰੀਜ਼ ਆਈਡੀ ਲੋੜੀਂਦੀ ਹੈ",

@@ -51,6 +51,7 @@
     "patient_id_page": {
         "page_title": "मौजूदा मरीज – अपना अनूठा मरीज आईडी दर्ज करें",
         "patient_id_placeholder": "मरीज आईडी दर्ज करें",
+        "phone_placeholder": "फोन नंबर दर्ज करें",
         "continue_button": "जारी रखें",
         "validation_errors": {
             "required": "मरीज आईडी आवश्यक है",

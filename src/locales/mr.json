@@ -51,6 +51,7 @@
     "patient_id_page": {
         "page_title": "मौजूदा रुग्ण – आपला अद्वितीय रुग्ण आयडी प्रविष्ट करा",
         "patient_id_placeholder": "रुग्ण आयडी प्रविष्ट करा",
+        "phone_placeholder": "फोन नंबर टाका",
         "continue_button": "सुरू ठेवा",
         "validation_errors": {
             "required": "रुग्ण आयडी आवश्यक आहे",

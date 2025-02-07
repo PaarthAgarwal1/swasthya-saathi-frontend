@@ -51,6 +51,7 @@
     "patient_id_page": {
         "page_title": "பழைய நோயாளர் – உங்கள் தனித்துவ நோயாளர் ஐடியை உள்ளிடவும்",
         "patient_id_placeholder": "நோயாளர் ஐடி உள்ளிடவும்",
+        "phone_placeholder": "போன் எண்செய்தி பதிவிடவும்",
         "continue_button": "தொடர்க",
         "validation_errors": {
             "required": "நோயாளர் ஐடி தேவையானது",

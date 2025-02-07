@@ -5,29 +5,41 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import useTextToSpeech from '../../components/TextToSpeech';
 import { useEffect } from 'react';
+import axiosInstance from '../../utils/axiosInstance';
 
 
 const PatientId = () => {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const speakText = useTextToSpeech(i18n.language);
-  
+
   useEffect(() => {
-        // Speak the main heading and subheading on page load
-        speakText(`${t('patient_id_page.page_title')}`);
-      }, [speakText, t, i18n.language]);
+    // Speak the main heading and subheading on page load
+    speakText(`${t('patient_id_page.page_title')}`);
+  }, [speakText, t, i18n.language]);
 
   const formik = useFormik({
     initialValues: {
-      existingId: '',
+      patientId: '',
+      phone: '',
     },
     validationSchema: Yup.object({
-      existingId: Yup.string()
+      patientId: Yup.string()
         .required(t('patient_id_page.validation_errors.required'))
         .matches(/^[A-Za-z0-9]+$/, t('patient_id_page.validation_errors.invalid_format')),
+      phone: Yup.string()
+        .required(t('patient_id_page.validation_errors.required'))
+        .matches(/^\d{10}$/, t('patient_id_page.validation_errors.phone_invalid')),
     }),
-    onSubmit: (values) => {
-      navigate('/doctor-ai');
+    onSubmit: async (values) => {
+      try {
+        console.log(values);
+
+        const res = await axiosInstance.post('/patient/get', values);
+        navigate('/doctor-ai');
+      } catch (error) {
+        console.error('Error', error);
+      }
     },
   });
 
@@ -45,27 +57,50 @@ const PatientId = () => {
           <form onSubmit={formik.handleSubmit}>
             <input
               type="text"
-              id="existingId"
-              name="existingId"
-              value={formik.values.existingId}
+              id="patientId"
+              name="patientId"
+              value={formik.values.patientId}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               placeholder={t('patient_id_page.patient_id_placeholder')}
-              className={`w-full p-3 border rounded-lg mb-2 ${
-                formik.touched.existingId && formik.errors.existingId
-                  ? 'border-red-500'
-                  : 'border-gray-300'
-              }`}
+              className={`w-full p-3 border rounded-lg mb-2 ${formik.touched.patientId && formik.errors.patientId
+                ? 'border-red-500'
+                : 'border-gray-300'
+                }`}
               onMouseEnter={() => speakText(t('patient_id_page.patient_id_placeholder'))}
             />
-            {formik.touched.existingId && formik.errors.existingId ? (
+            {formik.touched.patientId && formik.errors.patientId ? (
               <div
                 className="text-red-500 text-sm mb-4"
-                onMouseEnter={() => speakText(formik.errors.existingId)}
+                onMouseEnter={() => speakText(formik.errors.patientId)}
               >
-                {formik.errors.existingId}
+                {formik.errors.patientId}
               </div>
             ) : null}
+
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              value={formik.values.phone}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              placeholder={t('patient_id_page.phone_placeholder')}
+              className={`w-full p-3 border rounded-lg mb-2 ${formik.touched.phone && formik.errors.phone
+                ? 'border-red-500'
+                : 'border-gray-300'
+                }`}
+              onMouseEnter={() => speakText(t('patient_id_page.phone_placeholder'))}
+            />
+            {formik.touched.phone && formik.errors.phone ? (
+              <div
+                className="text-red-500 text-sm mb-4"
+                onMouseEnter={() => speakText(formik.errors.phone)}
+              >
+                {formik.errors.phone}
+              </div>
+            ) : null}
+
             <button
               type="submit"
               className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 text-center block"

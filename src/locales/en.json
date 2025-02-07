@@ -51,6 +51,7 @@
     "patient_id_page": {
         "page_title": "Existing Patient – Enter Your Unique Patient ID",
         "patient_id_placeholder": "Enter Patient ID",
+        "phone_placeholder": "Enter Phone Number",
         "continue_button": "Continue",
         "validation_errors": {
             "required": "Patient ID is required",
