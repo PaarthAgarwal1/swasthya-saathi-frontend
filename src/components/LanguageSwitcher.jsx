@@ -13,7 +13,8 @@ const LanguageSwitcher = () => {
   ];
 
   const changeLanguage = (event) => {
-    i18n.changeLanguage(event.target.value); // Change the language
+    i18n.changeLanguage(event.target.value);
+    localStorage.setItem("selectedLanguage", event.target.value); // Change the language
   };
 
   return (

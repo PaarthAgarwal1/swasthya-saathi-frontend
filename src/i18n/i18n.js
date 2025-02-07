@@ -16,11 +16,13 @@ const resources = {
   ta: { translation: taTranslation }, // Tamil
 };
 
+const savedLanguage = localStorage.getItem("selectedLanguage") || "en";
+
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'en', // Default language
+    lng: savedLanguage, // Default language
     fallbackLng: 'en', // Fallback language if a translation is not available in the selected language
     interpolation: {
       escapeValue: false, // To prevent escaping HTML characters
