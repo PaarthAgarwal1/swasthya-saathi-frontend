@@ -3,12 +3,18 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../../components/LanguageSwitcher';
 import useTextToSpeech from '../../components/TextToSpeech';
+import { useEffect } from 'react';
 
 function Welcome() {
   const { t, i18n } = useTranslation();
 
   // Use the custom hook for text-to-speech functionality
   const speakText = useTextToSpeech(i18n.language);
+
+  useEffect(() => {
+    // Speak the main heading and subheading on page load
+    speakText(`${t('welcome_page.main_heading')}. ${t('welcome_page.main_subheading')}`);
+  }, [speakText, t, i18n.language]);
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-400 to-blue-200 text-center">

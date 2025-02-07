@@ -1,102 +1,132 @@
-import React, { useState, useEffect } from "react";
-import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
+import React, { useState, useEffect } from 'react';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
-const TextToSpeech = (text) => {
-  const synth = window.speechSynthesis;
-  const utterance = new SpeechSynthesisUtterance(text);
-  synth.speak(utterance);
-};
-
-const GeminiChat = () => {
-  const [messages, setMessages] = useState([]);
+function HealthChatComponent() {
+  const [inputValue, setInputValue] = useState('');
+  const [conversationHistory, setConversationHistory] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [isListening, setIsListening] = useState(false);
-  const { transcript, resetTranscript } = useSpeechRecognition();
+  const [speechRecognition, setSpeechRecognition] = useState(null);
+  const [currentQuestion, setCurrentQuestion] = useState('How are you feeling today?'); // Initial question
 
+  const genAI = new GoogleGenerativeAI("AIzaSyC9H6KqUt9vOwdzGlEpRZumfk01dBEwzw4"); // Replace with your actual API key
+
+  // Initialize Speech Recognition API
   useEffect(() => {
-    if (transcript) {
-      handleUserMessage(transcript);
+    if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+      const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = 'en-US';
+      setSpeechRecognition(recognition);
+
+      recognition.onstart = () => setIsListening(true);
+      recognition.onend = () => {
+        setIsListening(false);
+        if (inputValue.trim()) {
+          handleSendMessage();
+        }
+      };
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        setInputValue(transcript);
+      };
+    } else {
+      console.error("Speech Recognition API is not supported in this browser.");
     }
-  }, [transcript]);
+  }, [inputValue]);
 
-  const handleUserMessage = async (userMessage) => {
-    if (!userMessage.trim()) return;
-
-    setMessages((prev) => [...prev, { sender: "user", text: userMessage }]);
-
-    // Replace this with Gemini API endpoint and request logic
-    const geminiResponse = await fetchGeminiResponse(userMessage);
-
-    setMessages((prev) => [...prev, { sender: "gemini", text: geminiResponse }]);
-    TextToSpeech(geminiResponse);
+  const handleVoiceInput = () => {
+    if (speechRecognition) {
+      if (isListening) {
+        speechRecognition.stop();
+      } else {
+        speechRecognition.start();
+      }
+    }
   };
 
-  const fetchGeminiResponse = async (message) => {
+  const askNextQuestion = async (patientResponse) => {
     try {
-      const response = await fetch("https://api.gemini.example.com/health-chat", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer AIzaSyC9H6KqUt9vOwdzGlEpRZumfk01dBEwzw4",
-        },
-        body: JSON.stringify({ message }),
-      });
+      setLoading(true);
+      const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
-      const data = await response.json();
-      return data.reply || "Sorry, I didn't understand that.";
+      // Ask the model to generate a follow-up question
+      const prompt = `
+        You are a virtual doctor. The patient just said: "${patientResponse}". 
+        Based on this, what is the next relevant health question to ask?
+      `;
+      const result = await model.generateContent(prompt);
+      const response = await result.response.text();
+
+      setConversationHistory((prevHistory) => [
+        ...prevHistory,
+        { role: 'doctor', message: response },
+      ]);
+
+      setCurrentQuestion(response);
+      setLoading(false);
     } catch (error) {
-      console.error("Error fetching Gemini response:", error);
-      return "There was an error connecting to Gemini.";
+      console.error("Error fetching Gemini response", error);
+      setLoading(false);
     }
   };
 
-  const startListening = () => {
-    setIsListening(true);
-    SpeechRecognition.startListening({ continuous: false, language: "en-US" });
+  const handleSendMessage = () => {
+    if (inputValue.trim()) {
+      setConversationHistory((prevHistory) => [
+        ...prevHistory,
+        { role: 'user', message: inputValue },
+      ]);
+
+      askNextQuestion(inputValue);
+      setInputValue('');
+    }
   };
 
-  const stopListening = () => {
-    setIsListening(false);
-    SpeechRecognition.stopListening();
-    resetTranscript();
+  const renderConversation = () => {
+    return conversationHistory.map((entry, index) => (
+      <div
+        key={index}
+        className={`p-3 my-2 rounded-lg ${entry.role === 'user' ? 'bg-green-100 text-right' : 'bg-blue-100 text-left'}`}
+      >
+        <p>{entry.message}</p>
+      </div>
+    ));
   };
 
   return (
-    <div className="flex flex-col items-center p-4 bg-gradient-to-b from-blue-100 to-blue-300 min-h-screen">
-      <h1 className="text-2xl font-bold mb-4">Health Chat with Gemini</h1>
+    <div className="max-w-xl mx-auto p-6 bg-white rounded-lg shadow-lg space-y-4">
+      <h2 className="text-2xl font-semibold text-center text-blue-600">Health Assistant Chat</h2>
 
-      <div className="w-full max-w-md bg-white p-4 rounded-xl shadow-lg mb-4">
-        {messages.map((msg, index) => (
-          <div
-            key={index}
-            className={`p-2 my-1 rounded-md ${
-              msg.sender === "user" ? "bg-blue-200 text-left" : "bg-green-200 text-right"
-            }`}
-          >
-            <strong>{msg.sender === "user" ? "You: " : "Gemini: "}</strong>
-            {msg.text}
-          </div>
-        ))}
+      <div className="flex items-center space-x-4">
+        <input
+          type="text"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          placeholder={currentQuestion}
+          className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          disabled={isListening}
+        />
+        <button
+          onClick={handleVoiceInput}
+          className={`w-16 h-16 flex justify-center items-center rounded-full ${isListening ? 'bg-red-500' : 'bg-green-500'} text-white text-xl transition-colors duration-200`}
+        >
+          {isListening ? '🔴' : '🎤'}
+        </button>
       </div>
 
-      <div className="flex space-x-4">
-        {!isListening ? (
-          <button
-            onClick={startListening}
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600"
-          >
-            Start Speaking
-          </button>
-        ) : (
-          <button
-            onClick={stopListening}
-            className="bg-red-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-red-600"
-          >
-            Stop Listening
-          </button>
-        )}
-      </div>
+      {loading ? (
+        <div className="text-center mt-3">
+          <span className="text-blue-500 font-semibold">Loading...</span>
+        </div>
+      ) : (
+        <div className="mt-4 space-y-2">
+          {renderConversation()}
+        </div>
+      )}
     </div>
   );
-};
+}
 
-export default GeminiChat;
+export default HealthChatComponent;

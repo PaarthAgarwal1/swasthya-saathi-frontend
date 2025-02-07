@@ -1,7 +1,8 @@
 import React from 'react';
-import GeminiChat from '../../components/GeminiChat';
+import HealthChatComponent from '../../components/GeminiChat';
+// import GeminiInReact from '../../components/GeminiChat';
 const Questionnaire = () => {
-   return <div></div>
+   return <div><HealthChatComponent/></div>
 };
 
 const SymptomQuestion = ({ question }) => {

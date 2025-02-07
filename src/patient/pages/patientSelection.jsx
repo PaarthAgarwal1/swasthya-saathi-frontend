@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import useTextToSpeech from "../../components/TextToSpeech";
+import { useEffect } from "react";
 
 function PatientSelection() {
   const { t, i18n } = useTranslation();
   const speakText = useTextToSpeech(i18n.language);
+
+  useEffect(() => {
+          // Speak the main heading and subheading on page load
+          speakText(`${t('patient_selection_page.main_heading')}.${t('patient_selection_page.subheading')}`);
+        }, [speakText, t, i18n.language]);
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-400 to-blue-200 text-center">

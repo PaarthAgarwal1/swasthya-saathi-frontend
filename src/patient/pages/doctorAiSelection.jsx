@@ -1,12 +1,18 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import useTextToSpeech from "../../components/TextToSpeech";
-// Custom hook for Text-to-Speech
+import { useEffect } from "react";
 
-
-async function DoctorAiSelection() {
+function DoctorAiSelection() {
   const { t, i18n } = useTranslation();
-  const speakText = useTextToSpeech(i18n.language); // Use the language-aware TTS function
+  const speakText = useTextToSpeech(i18n.language); // Ensure the hook supports dynamic languages
+
+  useEffect(() => {
+            // Speak the main heading and subheading on page load
+            speakText(`${t('doctor_ai_selection_page.main_heading')}.${t('doctor_ai_selection_page.subheading')}`);
+          }, [speakText, t, i18n.language]);
+  
+
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-400 to-blue-200 text-center">
       <header className="bg-gray-800 text-white py-4">
@@ -43,7 +49,7 @@ async function DoctorAiSelection() {
             </button>
           </Link>
 
-          <Link to="">
+          <Link to="/doctor-consultation">
             <button
               className="bg-green-500 hover:bg-green-600 text-white text-4xl py-6 px-10 mx-2 rounded-2xl shadow-md"
               onMouseEnter={() => speakText(t('doctor_ai_selection_page.doctor_consultation_button'))}

@@ -4,12 +4,18 @@ import * as Yup from 'yup';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import useTextToSpeech from '../../components/TextToSpeech';
+import { useEffect } from 'react';
 
 
 const PatientId = () => {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const speakText = useTextToSpeech(i18n.language);
+  
+  useEffect(() => {
+        // Speak the main heading and subheading on page load
+        speakText(`${t('patient_id_page.page_title')}`);
+      }, [speakText, t, i18n.language]);
 
   const formik = useFormik({
     initialValues: {

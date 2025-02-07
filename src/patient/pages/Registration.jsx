@@ -4,11 +4,19 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useTranslation } from 'react-i18next';
 import useTextToSpeech from '../../components/TextToSpeech';
+import { useEffect } from 'react';
 
 
 const Registration = () => {
   const { t, i18n } = useTranslation();
   const speakText = useTextToSpeech(i18n.language); // Initialize text-to-speech hook
+
+  useEffect(() => {
+      // Speak the main heading and subheading on page load
+      speakText(`${t('registration_page.page_title')}`);
+    }, [speakText, t, i18n.language]);
+
+
   const navigate = useNavigate();
   const location = useLocation();
   const patientId = location.state?.patientId;
