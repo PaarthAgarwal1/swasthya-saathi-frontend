@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import useTextToSpeech from '../../components/TextToSpeech';
-import { useEffect } from 'react';
 import axiosInstance from '../../utils/axiosInstance';
-
 
 const PatientId = () => {
   const navigate = useNavigate();
@@ -14,7 +12,7 @@ const PatientId = () => {
   const speakText = useTextToSpeech(i18n.language);
 
   useEffect(() => {
-    // Speak the main heading and subheading on page load
+    // Speak the main heading on page load
     speakText(`${t('patient_id_page.page_title')}`);
   }, [speakText, t, i18n.language]);
 
@@ -34,7 +32,6 @@ const PatientId = () => {
     onSubmit: async (values) => {
       try {
         console.log(values);
-
         const res = await axiosInstance.post('/patient/get', values);
         navigate('/doctor-ai');
       } catch (error) {
@@ -44,16 +41,25 @@ const PatientId = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg shadow-xl p-8 w-full max-w-md">
-        <div className="mb-8">
-          <h2
-            className="text-2xl font-bold text-gray-800 mb-4"
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-400 to-blue-200 text-center">
+      <header className="bg-gray-800 text-white py-6">
+        <div className="flex items-center justify-center">
+        <h1
+            className="text-3xl font-bold"
+            onMouseEnter={() => speakText(t('patient_id_page.header_title'))} // Trigger text-to-speech on hover
+          >
+            {t('patient_id_page.header_title')}
+          </h1>
+        </div>
+      </header>
+      <main className="flex-grow flex flex-col items-center justify-center px-4">
+        <div className="bg-white rounded-lg shadow-xl p-8 w-full max-w-md">
+        <h2
+            className="text-2xl pb-4 font-bold"
             onMouseEnter={() => speakText(t('patient_id_page.page_title'))}
           >
             {t('patient_id_page.page_title')}
           </h2>
-
           <form onSubmit={formik.handleSubmit}>
             <input
               type="text"
@@ -103,14 +109,24 @@ const PatientId = () => {
 
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 text-center block"
+              className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 text-center block"
               onMouseEnter={() => speakText(t('patient_id_page.continue_button'))}
             >
               {t('patient_id_page.continue_button')}
             </button>
           </form>
         </div>
-      </div>
+      </main>
+      <footer className="bg-gray-800 text-white py-4">
+        <div className="flex items-center justify-center">
+          <p
+            className="text-sm"
+            onMouseEnter={() => speakText(t('patient_id_page.footer_text'))}
+          >
+            {t('patient_id_page.footer_text')}
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };

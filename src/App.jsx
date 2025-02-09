@@ -6,6 +6,11 @@ import Registration from './patient/pages/Registration';
 import Questionnaire from './patient/pages/Questionnaire';
 import PatientSelection from './patient/pages/patientSelection';
 import DoctorAiSelection from './patient/pages/doctorAiSelection';
+import Feedback from './patient/pages/FeedBack';
+
+import DiagnosticQuestions from './patient/pages/getQuestions';
+import AIInteraction from './patient/pages/aiIntraction';
+import Diagnosis from './patient/pages/aiDiagnosis';
 
 
 
@@ -20,6 +25,10 @@ function App() {
                 <Route path='/registration' element={<Registration />} /> 
                 <Route path='/doctor-ai' element={<DoctorAiSelection/>}/>
                 <Route path='/questionnaire' element={<Questionnaire />} />
+                <Route path='/feedback' element={<Feedback/>}/>
+                <Route path='/ai-interaction' element={<AIInteraction/>}/>
+                <Route path='/diagnostic-questions' element={<DiagnosticQuestions/>}/>
+                <Route path='/ai-diagnosis' element={<Diagnosis/>}/>
                 {/* <Route path='/symptoms' element={< Symptoms />} /> */}
             </Routes>
         </BrowserRouter>

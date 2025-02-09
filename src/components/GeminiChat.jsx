@@ -7,11 +7,10 @@ function HealthChatComponent() {
   const [loading, setLoading] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [speechRecognition, setSpeechRecognition] = useState(null);
-  const [currentQuestion, setCurrentQuestion] = useState('How are you feeling today?'); // Initial question
+  const [currentQuestion, setCurrentQuestion] = useState('How are you feeling today?');
 
-  const genAI = new GoogleGenerativeAI("AIzaSyC9H6KqUt9vOwdzGlEpRZumfk01dBEwzw4"); // Replace with your actual API key
+  const genAI = new GoogleGenerativeAI(`AIzaSyC9H6KqUt9vOwdzGlEpRZumfk01dBEwzw4`);
 
-  // Initialize Speech Recognition API
   useEffect(() => {
     if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
       const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
@@ -21,12 +20,8 @@ function HealthChatComponent() {
       setSpeechRecognition(recognition);
 
       recognition.onstart = () => setIsListening(true);
-      recognition.onend = () => {
-        setIsListening(false);
-        if (inputValue.trim()) {
-          handleSendMessage();
-        }
-      };
+      recognition.onend = () => setIsListening(false);
+
       recognition.onresult = (event) => {
         const transcript = event.results[0][0].transcript;
         setInputValue(transcript);
@@ -34,7 +29,7 @@ function HealthChatComponent() {
     } else {
       console.error("Speech Recognition API is not supported in this browser.");
     }
-  }, [inputValue]);
+  }, []);
 
   const handleVoiceInput = () => {
     if (speechRecognition) {
@@ -49,13 +44,9 @@ function HealthChatComponent() {
   const askNextQuestion = async (patientResponse) => {
     try {
       setLoading(true);
-      const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+      const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+      const prompt = `Patient said: "${patientResponse}". What's the next relevant health question to ask?`;
 
-      // Ask the model to generate a follow-up question
-      const prompt = `
-        You are a virtual doctor. The patient just said: "${patientResponse}". 
-        Based on this, what is the next relevant health question to ask?
-      `;
       const result = await model.generateContent(prompt);
       const response = await result.response.text();
 
@@ -67,7 +58,7 @@ function HealthChatComponent() {
       setCurrentQuestion(response);
       setLoading(false);
     } catch (error) {
-      console.error("Error fetching Gemini response", error);
+      console.error('Error fetching Gemini response', error);
       setLoading(false);
     }
   };
@@ -88,7 +79,9 @@ function HealthChatComponent() {
     return conversationHistory.map((entry, index) => (
       <div
         key={index}
-        className={`p-3 my-2 rounded-lg ${entry.role === 'user' ? 'bg-green-100 text-right' : 'bg-blue-100 text-left'}`}
+        className={`p-3 my-2 rounded-lg ${
+          entry.role === 'user' ? 'bg-green-100 text-right' : 'bg-blue-100 text-left'
+        }`}
       >
         <p>{entry.message}</p>
       </div>
@@ -110,9 +103,17 @@ function HealthChatComponent() {
         />
         <button
           onClick={handleVoiceInput}
-          className={`w-16 h-16 flex justify-center items-center rounded-full ${isListening ? 'bg-red-500' : 'bg-green-500'} text-white text-xl transition-colors duration-200`}
+          className={`w-16 h-16 flex justify-center items-center rounded-full ${
+            isListening ? 'bg-red-500' : 'bg-green-500'
+          } text-white text-xl transition-colors duration-200`}
         >
           {isListening ? '🔴' : '🎤'}
+        </button>
+        <button
+          onClick={handleSendMessage}
+          className="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-600"
+        >
+          Send
         </button>
       </div>
 
@@ -121,9 +122,7 @@ function HealthChatComponent() {
           <span className="text-blue-500 font-semibold">Loading...</span>
         </div>
       ) : (
-        <div className="mt-4 space-y-2">
-          {renderConversation()}
-        </div>
+        <div className="mt-4 space-y-2">{renderConversation()}</div>
       )}
     </div>
   );

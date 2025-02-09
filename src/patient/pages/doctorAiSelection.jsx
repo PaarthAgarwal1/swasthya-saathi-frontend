@@ -40,7 +40,7 @@ function DoctorAiSelection() {
         </p>
 
         <div className="space-x-4">
-          <Link to="/questionnaire">
+          <Link to="/ai-interaction">
             <button
               className="bg-blue-500 hover:bg-blue-600 text-white text-4xl py-6 px-10 mx-2 rounded-2xl shadow-md"
               onMouseEnter={() => speakText(t('doctor_ai_selection_page.ai_consultation_button'))}
