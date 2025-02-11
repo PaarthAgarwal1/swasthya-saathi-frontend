@@ -43,7 +43,7 @@ export default function Diagnosis() {
           </p>
           <div className="flex justify-center space-x-4">
             <button
-              onClick={() => navigate("/doctor-consultation")}
+              onClick={() => navigate("/payment-gateway")}
               className="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-xl font-semibold shadow-lg transition-transform transform hover:scale-105"
               onMouseEnter={() =>
                 speakText(t("diagnosis_page.consult_doctor_button"))

@@ -34,7 +34,7 @@ const Registration = () => {
     age: Yup.number().required(t('registration_page.validation_errors.required')).positive().integer(),
     phone: Yup.string().required(t('registration_page.validation_errors.required')),
     alternateNumber: Yup.string().matches(/^\d{10}$/, t('registration_page.validation_errors.phone_invalid')),
-    email: Yup.string().email(t('registration_page.validation_errors.email_invalid')).required(t('registration_page.validation_errors.required')),
+    email: Yup.string().email(t('registration_page.validation_errors.email_invalid')),
     address: Yup.string().required(t('registration_page.validation_errors.required'))
   });
 

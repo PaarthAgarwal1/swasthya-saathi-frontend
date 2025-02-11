@@ -11,6 +11,8 @@ import Feedback from './patient/pages/FeedBack';
 import DiagnosticQuestions from './patient/pages/getQuestions';
 import AIInteraction from './patient/pages/aiIntraction';
 import Diagnosis from './patient/pages/aiDiagnosis';
+import RazorpayPayment from './patient/pages/PaymentGateway';
+import PatientConnect from './patient/pages/PatientConnect';
 
 
 
@@ -29,6 +31,8 @@ function App() {
                 <Route path='/ai-interaction' element={<AIInteraction/>}/>
                 <Route path='/diagnostic-questions' element={<DiagnosticQuestions/>}/>
                 <Route path='/ai-diagnosis' element={<Diagnosis/>}/>
+                <Route path='/payment-gateway' element={<RazorpayPayment/>}/>
+                <Route path="/patient-connect" element={<PatientConnect />} />
                 {/* <Route path='/symptoms' element={< Symptoms />} /> */}
             </Routes>
         </BrowserRouter>

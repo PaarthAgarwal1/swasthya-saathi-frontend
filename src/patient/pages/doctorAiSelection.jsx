@@ -49,7 +49,7 @@ function DoctorAiSelection() {
             </button>
           </Link>
 
-          <Link to="/doctor-consultation">
+          <Link to="/payment-gateway">
             <button
               className="bg-green-500 hover:bg-green-600 text-white text-4xl py-6 px-10 mx-2 rounded-2xl shadow-md"
               onMouseEnter={() => speakText(t('doctor_ai_selection_page.doctor_consultation_button'))}
