@@ -33,7 +33,6 @@ function App() {
                 <Route path='/ai-diagnosis' element={<Diagnosis/>}/>
                 <Route path='/payment-gateway' element={<RazorpayPayment/>}/>
                 <Route path="/patient-connect" element={<PatientConnect />} />
-                {/* <Route path='/symptoms' element={< Symptoms />} /> */}
             </Routes>
         </BrowserRouter>
     );
