@@ -1,35 +1,24 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import useTextToSpeech from "../../components/TextToSpeech";
+import { useLocation } from "react-router-dom";
+import axiosInstance from "../../utils/axiosInstance";
 
-const getQuestionsFromGemini = async () => {
-  return [
-    "How long have you been experiencing symptoms?",
-    "Do you have a fever? If yes, what's your temperature?",
-    "Are you experiencing any pain? If yes, where?",
-    "Have you been in contact with anyone who's been sick recently?",
-  ];
-};
-
-const sendAnswersToGemini = async (answers) => {
-  console.log("Sending answers to Gemini API:", answers);
-  return Math.random() < 0.5;
-};
 
 export default function DiagnosticQuestions() {
+  const location = useLocation();
   const { t, i18n } = useTranslation();
   const speakText = useTextToSpeech(i18n.language);
-  const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
+  
+  const questions = location.state?.questions || [];
+  const symptoms = location.state?.symptoms || "";
+  const [report,setReport] = useState("");
 
   useEffect(() => {
     const fetchQuestions = async () => {
-      const fetchedQuestions = await getQuestionsFromGemini();
-      setQuestions(fetchedQuestions);
-      setAnswers(new Array(fetchedQuestions.length).fill(""));
+      setAnswers(new Array(questions.length).fill(""));
       setIsLoading(false);
     };
     fetchQuestions();
@@ -44,30 +33,32 @@ export default function DiagnosticQuestions() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-  
-    const needMoreQuestions = await sendAnswersToGemini(answers);
-  
-    if (needMoreQuestions) {
-      const newQuestions = await getQuestionsFromGemini();
-      setQuestions(newQuestions);
-      setAnswers(new Array(newQuestions.length).fill(""));
-      setIsLoading(false);
-    } else {
-      setIsLoading(false);
-      navigate('/ai-diagnosis');
-    }
+    const response = await axiosInstance.post("/ai/generate-report",{symptoms,questions,answers});
+    setReport(response.data.report);
+    setIsLoading(false)
+
+    console.log(response.data.report);
   };
 
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-blue-400 to-blue-200 flex items-center justify-center">
         <p className="text-2xl font-semibold text-white animate-pulse">
-          {t('loading_message', { defaultValue: "Loading questions..." })}
+          {t('loading_message', { defaultValue: "Loading report..." })}
         </p>
       </div>
     );
   }
 
+  if(report.length > 0){
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-blue-400 to-blue-200 flex items-center justify-center">
+      <p className="text-2xl font-semibold text-white animate-pulse">
+        {report}
+      </p>
+    </div>
+    )
+  }
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-400 to-blue-200 text-center">
       <header className="bg-gray-800 text-white py-4">
