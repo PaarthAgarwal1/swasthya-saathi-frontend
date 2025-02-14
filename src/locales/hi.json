@@ -71,34 +71,36 @@
         "footer_text": "© 2025 हेल्थकेयर कियोस्क। सर्वाधिकार सुरक्षित।"
     },
     "ai_interaction_page": {
-    "title": "एआई स्वास्थ्य परामर्श",
-    "prompt": "अपने लक्षणों का वर्णन करें",
-    "placeholder": "अपने लक्षणों का वर्णन करें...",
-    "send_button": "भेजें",
-    "microphone_toggle": "माइक्रोफ़ोन टॉगल करें",
-    "footer_text": "आपका स्वास्थ्य, हमारी प्राथमिकता। स्वस्थ रहें!"
-  },
-  "diagnostic_questions_page": {
-    "header_title": "एआई स्वास्थ्य परामर्श",
-    "main_heading": "नैदानिक प्रश्नों के उत्तर दें",
-    "loading_message": "प्रश्न लोड हो रहे हैं...",
-    "submit_button": "उत्तर सबमिट करें",
-    "footer_text": "आपका स्वास्थ्य, हमारी प्राथमिकता!"
-  },
-  "diagnosis_page": {
-    "header_title": "एआई स्वास्थ्य परामर्श",
-    "main_heading": "एआई निदान",
-    "diagnosis_message": "आपके लक्षणों के आधार पर, आपको सामान्य सर्दी हो सकती है। हालांकि, कृपया सही निदान के लिए डॉक्टर से परामर्श करें।",
-    "consult_doctor_button": "डॉक्टर से परामर्श करें",
-    "thank_you_button": "धन्यवाद",
-    "footer_text": "आपका स्वास्थ्य, हमारी प्राथमिकता!"
-  },
-  "feedback_page": {
-    "header_title": "हम आपके सुझावों की कदर करते हैं",
-    "form_title": "आपका सुझाव",
-    "star_rating": "स्टार चुना गया",
-    "review_placeholder": "हमें अपने अनुभव के बारे में बताएं...",
-    "submit_button": "प्रतिक्रिया जमा करें",
-    "footer_text": "हमें बेहतर बनाने में मदद करने के लिए धन्यवाद!"
-  }
+        "title": "एआई स्वास्थ्य परामर्श",
+        "prompt": "अपने लक्षणों का वर्णन करें",
+        "placeholder": "अपने लक्षणों का वर्णन करें...",
+        "send_button": "भेजें",
+        "microphone_toggle": "माइक्रोफ़ोन टॉगल करें",
+        "footer_text": "आपका स्वास्थ्य, हमारी प्राथमिकता। स्वस्थ रहें!"
+    },
+    "diagnostic_questions_page": {
+        "header_title": "एआई स्वास्थ्य परामर्श",
+        "main_heading": "नैदानिक प्रश्नों के उत्तर दें",
+        "loading_message": "प्रश्न लोड हो रहे हैं...",
+        "submit_button": "उत्तर सबमिट करें",
+        "footer_text": "आपका स्वास्थ्य, हमारी प्राथमिकता!"
+    },
+    "diagnosis_page": {
+        "header_title": "एआई स्वास्थ्य परामर्श",
+        "main_heading": "एआई निदान",
+        "diagnosis_label": "निदान",
+        "advice_title": "स्वास्थ्य सलाह",
+        "recommendations_title": "सिफारिशें",
+        "consult_doctor_button": "डॉक्टर से परामर्श करें",
+        "thank_you_button": "धन्यवाद",
+        "footer_text": "आपका स्वास्थ्य, हमारी प्राथमिकता!"
+    },
+    "feedback_page": {
+        "header_title": "हम आपके सुझावों की कदर करते हैं",
+        "form_title": "आपका सुझाव",
+        "star_rating": "स्टार चुना गया",
+        "review_placeholder": "हमें अपने अनुभव के बारे में बताएं...",
+        "submit_button": "प्रतिक्रिया जमा करें",
+        "footer_text": "हमें बेहतर बनाने में मदद करने के लिए धन्यवाद!"
+    }
 }

@@ -17,7 +17,7 @@ export default function AIInteraction() {
     console.log("Sending to Gemini API:", input);
     try {
       const response = await axiosInstance.post("/ai/generate-questions", { symptoms: input });
-      console.log(response.data.questions);
+      console.log("response is here",response.data);
       navigate("/diagnostic-questions", { state: { questions: response.data.questions, symptoms:input} });
     } catch (error) {
       console.error("Error:", error);

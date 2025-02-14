@@ -3,9 +3,11 @@ import { useTranslation } from "react-i18next";
 import useTextToSpeech from "../../components/TextToSpeech";
 import { useLocation } from "react-router-dom";
 import axiosInstance from "../../utils/axiosInstance";
+import { useNavigate } from "react-router-dom";
 
 
 export default function DiagnosticQuestions() {
+  const navigate=useNavigate();
   const location = useLocation();
   const { t, i18n } = useTranslation();
   const speakText = useTextToSpeech(i18n.language);
@@ -34,7 +36,7 @@ export default function DiagnosticQuestions() {
     e.preventDefault();
     setIsLoading(true);
     const response = await axiosInstance.post("/ai/generate-report",{symptoms,questions,answers});
-    setReport(response.data.report);
+    navigate("/ai-diagnosis", { state: { report: response.data.report } });
     setIsLoading(false)
 
     console.log(response.data.report);

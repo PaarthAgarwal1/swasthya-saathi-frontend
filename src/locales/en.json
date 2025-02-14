@@ -48,7 +48,7 @@
             "phone_invalid": "Invalid phone number",
             "email_invalid": "Invalid email format"
         },
-        "footer_text":"© 2025 HealthCare Kiosk. All rights reserved."
+        "footer_text": "© 2025 HealthCare Kiosk. All rights reserved."
     },
     "patient_id_page": {
         "header_title": "HealthCare Kiosk",
@@ -60,7 +60,7 @@
             "required": "Patient ID is required",
             "invalid_format": "Patient ID should contain only letters and numbers"
         },
-        "footer_text":"© 2025 HealthCare Kiosk. All rights reserved."
+        "footer_text": "© 2025 HealthCare Kiosk. All rights reserved."
     },
     "doctor_ai_selection_page": {
         "header_title": "HealthCare Kiosk",
@@ -88,7 +88,9 @@
     "diagnosis_page": {
         "header_title": "AI Health Consultation",
         "main_heading": "AI Diagnosis",
-        "diagnosis_message": "Based on your symptoms, you may have a common cold. However, please consult with a doctor for a proper diagnosis.",
+        "diagnosis_label": "Diagnosis",
+        "advice_title": "Health Advice",
+        "recommendations_title": "Recommendations",
         "consult_doctor_button": "Consult with Doctor",
         "thank_you_button": "Thank You",
         "footer_text": "Your health, our priority!"

@@ -86,19 +86,21 @@
         "footer_text": "आपले आरोग्य, आमचे प्राधान्य!"
     },
     "diagnosis_page": {
-    "header_title": "एआय आरोग्य सल्ला",
-    "main_heading": "एआय निदान",
-    "diagnosis_message": "तुमच्या लक्षणांवरून तुम्हाला सामान्य सर्दी होऊ शकते. मात्र, योग्य निदानासाठी डॉक्टरांचा सल्ला घ्या.",
-    "consult_doctor_button": "डॉक्टरांचा सल्ला घ्या",
-    "thank_you_button": "धन्यवाद",
-    "footer_text": "तुमचे आरोग्य, आमची प्राधान्यता!"
-  },
-  "feedback_page": {
-    "header_title": "आम्हाला तुमच्या अभिप्रायाची कदर आहे",
-    "form_title": "तुमचा अभिप्राय",
-    "star_rating": "स्टार निवडले",
-    "review_placeholder": "तुमचा अनुभव आम्हाला सांगा...",
-    "submit_button": "अभिप्राय सबमिट करा",
-    "footer_text": "आम्हाला सुधारण्यास मदत केल्याबद्दल धन्यवाद!"
-  }
+        "header_title": "एआय आरोग्य सल्ला",
+        "main_heading": "एआय निदान",
+        "diagnosis_label": "निदान",
+        "advice_title": "आरोग्य सल्ला",
+        "recommendations_title": "शिफारसी",
+        "consult_doctor_button": "डॉक्टरशी सल्लामसलत करा",
+        "thank_you_button": "धन्यवाद",
+        "footer_text": "तुमचे आरोग्य, आमचे प्राधान्य!"
+    },
+    "feedback_page": {
+        "header_title": "आम्हाला तुमच्या अभिप्रायाची कदर आहे",
+        "form_title": "तुमचा अभिप्राय",
+        "star_rating": "स्टार निवडले",
+        "review_placeholder": "तुमचा अनुभव आम्हाला सांगा...",
+        "submit_button": "अभिप्राय सबमिट करा",
+        "footer_text": "आम्हाला सुधारण्यास मदत केल्याबद्दल धन्यवाद!"
+    }
 }

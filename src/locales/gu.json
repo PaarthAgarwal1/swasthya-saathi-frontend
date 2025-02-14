@@ -71,34 +71,36 @@
         "footer_text": "© 2025 હેલ્થકેર કિયોસ્ક. સર્વાધિકારો સંગ્રહિત."
     },
     "ai_interaction_page": {
-    "title": "એઆઇ આરોગ્ય સલાહ",
-    "prompt": "તમારા લક્ષણોનું વર્ણન કરો",
-    "placeholder": "તમારા લક્ષણોનું વર્ણન કરો...",
-    "send_button": "મોકલો",
-    "microphone_toggle": "માઇક્રોફોન ટૉગલ કરો",
-    "footer_text": "તમારું આરોગ્ય, અમારી પ્રાથમિકતા. સ્વસ્થ રહો!"
-  },
-  "diagnostic_questions_page": {
-    "header_title": "એઆઈ આરોગ્ય સલાહ",
-    "main_heading": "નિદાન પ્રશ્નોના ઉત્તર આપો",
-    "loading_message": "પ્રશ્નો લોડ થઈ રહ્યા છે...",
-    "submit_button": "જવાબ મોકલો",
-    "footer_text": "તમારું આરોગ્ય, અમારું પ્રાથમિકતા!"
-  },
-  "diagnosis_page": {
-    "header_title": "એઆઈ આરોગ્ય પરામર્શ",
-    "main_heading": "એઆઈ નિદાન",
-    "diagnosis_message": "તમારા લક્ષણોના આધાર પર તમને સામાન્ય ઠંડુ થઈ શકે છે. તેમછત્તા, યોગ્ય નિદાન માટે ડોક્ટરની સલાહ લો.",
-    "consult_doctor_button": "ડોક્ટરની સલાહ લો",
-    "thank_you_button": "આભાર",
-    "footer_text": "તમારું આરોગ્ય, અમારી પ્રાથમિકતા!"
-  },
-  "feedback_page": {
-    "header_title": "અમે તમારી પ્રતિસાદની કદર કરીએ છીએ",
-    "form_title": "તમારો પ્રતિસાદ",
-    "star_rating": "સ્ટાર પસંદ કરેલ",
-    "review_placeholder": "અમને તમારું અનુભવ જણાવો...",
-    "submit_button": "પ્રતિસાદ સબમિટ કરો",
-    "footer_text": "અમને સુધારવામાં મદદ કરવા માટે આભાર!"
-  }
+        "title": "એઆઇ આરોગ્ય સલાહ",
+        "prompt": "તમારા લક્ષણોનું વર્ણન કરો",
+        "placeholder": "તમારા લક્ષણોનું વર્ણન કરો...",
+        "send_button": "મોકલો",
+        "microphone_toggle": "માઇક્રોફોન ટૉગલ કરો",
+        "footer_text": "તમારું આરોગ્ય, અમારી પ્રાથમિકતા. સ્વસ્થ રહો!"
+    },
+    "diagnostic_questions_page": {
+        "header_title": "એઆઈ આરોગ્ય સલાહ",
+        "main_heading": "નિદાન પ્રશ્નોના ઉત્તર આપો",
+        "loading_message": "પ્રશ્નો લોડ થઈ રહ્યા છે...",
+        "submit_button": "જવાબ મોકલો",
+        "footer_text": "તમારું આરોગ્ય, અમારું પ્રાથમિકતા!"
+    },
+    "diagnosis_page": {
+        "header_title": "એઆઈ હેલ્થ પરામર્શ",
+        "main_heading": "એઆઈ નિદાન",
+        "diagnosis_label": "નિદાન",
+        "advice_title": "આરોગ્ય સલાહ",
+        "recommendations_title": "શિફારસો",
+        "consult_doctor_button": "ડૉક્ટર સાથે પરામર્શ કરો",
+        "thank_you_button": "આભાર",
+        "footer_text": "તમારું આરોગ્ય, અમારી પ્રાથમિકતા!"
+    },
+    "feedback_page": {
+        "header_title": "અમે તમારી પ્રતિસાદની કદર કરીએ છીએ",
+        "form_title": "તમારો પ્રતિસાદ",
+        "star_rating": "સ્ટાર પસંદ કરેલ",
+        "review_placeholder": "અમને તમારું અનુભવ જણાવો...",
+        "submit_button": "પ્રતિસાદ સબમિટ કરો",
+        "footer_text": "અમને સુધારવામાં મદદ કરવા માટે આભાર!"
+    }
 }

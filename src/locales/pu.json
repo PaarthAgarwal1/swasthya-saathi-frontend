@@ -71,34 +71,36 @@
         "footer_text": "© 2025 ਹੈਲਥਕੇਅਰ ਕਿਓਸਕ. ਸਾਰੇ ਹੱਕ ਸੁਰੱਖਿਅਤ।"
     },
     "ai_interaction_page": {
-    "title": "ਏਆਈ ਸਿਹਤ ਸਲਾਹ",
-    "prompt": "ਆਪਣੇ ਲੱਛਣ ਵੇਰਵਾ ਦਿਓ",
-    "placeholder": "ਆਪਣੇ ਲੱਛਣ ਵੇਰਵਾ ਦਿਓ...",
-    "send_button": "ਭੇਜੋ",
-    "microphone_toggle": "ਮਾਈਕ੍ਰੋਫੋਨ ਟੌਗਲ ਕਰੋ",
-    "footer_text": "ਤੁਹਾਡੀ ਸਿਹਤ, ਸਾਡੀ ਤਰਜੀਹ। ਸਿਹਤਮੰਦ ਰਹੋ!"
-  },
-  "diagnostic_questions_page": {
-    "header_title": "ਏਆਈ ਸਿਹਤ ਮਸ਼ਵਰਾ",
-    "main_heading": "ਨਿਦਾਨਕ ਪ੍ਰਸ਼ਨਾਂ ਦੇ ਜਵਾਬ ਦਿਓ",
-    "loading_message": "ਪ੍ਰਸ਼ਨ ਲੋਡ ਹੋ ਰਹੇ ਹਨ...",
-    "submit_button": "ਜਵਾਬ ਜਮ੍ਹਾਂ ਕਰੋ",
-    "footer_text": "ਤੁਹਾਡੀ ਸਿਹਤ, ਸਾਡੀ ਤਰਜੀਹ!"
-  },
-  "diagnosis_page": {
-    "header_title": "ਏਆਈ ਸਿਹਤ ਸਲਾਹ",
-    "main_heading": "ਏਆਈ ਨਿਰਣਾ",
-    "diagnosis_message": "ਤੁਹਾਡੇ ਲੱਛਣਾਂ ਦੇ ਆਧਾਰ 'ਤੇ ਤੁਹਾਨੂੰ ਆਮ ਜ਼ੁਕਾਮ ਹੋ ਸਕਦਾ ਹੈ। ਹਾਲਾਂਕਿ, ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਨਿਰਣਾ ਲਈ ਡਾਕਟਰ ਨਾਲ ਸਲਾਹ ਕਰੋ।",
-    "consult_doctor_button": "ਡਾਕਟਰ ਨਾਲ ਸਲਾਹ ਕਰੋ",
-    "thank_you_button": "ਧੰਨਵਾਦ",
-    "footer_text": "ਤੁਹਾਡੀ ਸਿਹਤ, ਸਾਡੀ ਪ੍ਰਾਥਮਿਕਤਾ!"
-  },
-  "feedback_page": {
-    "header_title": "ਅਸੀਂ ਤੁਹਾਡੇ ਫੀਡਬੈਕ ਦੀ ਕਦਰ ਕਰਦੇ ਹਾਂ",
-    "form_title": "ਤੁਹਾਡਾ ਫੀਡਬੈਕ",
-    "star_rating": "ਸਟਾਰ ਚੁਣਿਆ ਗਿਆ",
-    "review_placeholder": "ਸਾਨੂੰ ਆਪਣੇ ਅਨੁਭਵ ਬਾਰੇ ਦੱਸੋ...",
-    "submit_button": "ਫੀਡਬੈਕ ਜਮ੍ਹਾਂ ਕਰੋ",
-    "footer_text": "ਸਾਨੂੰ ਬਿਹਤਰ ਬਣਾਉਣ ਵਿੱਚ ਸਹਾਇਤਾ ਕਰਨ ਲਈ ਧੰਨਵਾਦ!"
-  }
+        "title": "ਏਆਈ ਸਿਹਤ ਸਲਾਹ",
+        "prompt": "ਆਪਣੇ ਲੱਛਣ ਵੇਰਵਾ ਦਿਓ",
+        "placeholder": "ਆਪਣੇ ਲੱਛਣ ਵੇਰਵਾ ਦਿਓ...",
+        "send_button": "ਭੇਜੋ",
+        "microphone_toggle": "ਮਾਈਕ੍ਰੋਫੋਨ ਟੌਗਲ ਕਰੋ",
+        "footer_text": "ਤੁਹਾਡੀ ਸਿਹਤ, ਸਾਡੀ ਤਰਜੀਹ। ਸਿਹਤਮੰਦ ਰਹੋ!"
+    },
+    "diagnostic_questions_page": {
+        "header_title": "ਏਆਈ ਸਿਹਤ ਮਸ਼ਵਰਾ",
+        "main_heading": "ਨਿਦਾਨਕ ਪ੍ਰਸ਼ਨਾਂ ਦੇ ਜਵਾਬ ਦਿਓ",
+        "loading_message": "ਪ੍ਰਸ਼ਨ ਲੋਡ ਹੋ ਰਹੇ ਹਨ...",
+        "submit_button": "ਜਵਾਬ ਜਮ੍ਹਾਂ ਕਰੋ",
+        "footer_text": "ਤੁਹਾਡੀ ਸਿਹਤ, ਸਾਡੀ ਤਰਜੀਹ!"
+    },
+    "diagnosis_page": {
+        "header_title": "ਏਆਈ ਸਿਹਤ ਪਰਾਮਰਸ਼",
+        "main_heading": "ਏਆਈ ਨਿਦਾਨ",
+        "diagnosis_label": "ਨਿਦਾਨ",
+        "advice_title": "ਸਿਹਤ ਸਲਾਹ",
+        "recommendations_title": "ਸਿਫਾਰਸ਼ਾਂ",
+        "consult_doctor_button": "ਡਾਕਟਰ ਨਾਲ ਸੰਪਰਕ ਕਰੋ",
+        "thank_you_button": "ਧੰਨਵਾਦ",
+        "footer_text": "ਤੁਹਾਡੀ ਸਿਹਤ, ਸਾਡੀ ਤਰਜੀਹ!"
+    },
+    "feedback_page": {
+        "header_title": "ਅਸੀਂ ਤੁਹਾਡੇ ਫੀਡਬੈਕ ਦੀ ਕਦਰ ਕਰਦੇ ਹਾਂ",
+        "form_title": "ਤੁਹਾਡਾ ਫੀਡਬੈਕ",
+        "star_rating": "ਸਟਾਰ ਚੁਣਿਆ ਗਿਆ",
+        "review_placeholder": "ਸਾਨੂੰ ਆਪਣੇ ਅਨੁਭਵ ਬਾਰੇ ਦੱਸੋ...",
+        "submit_button": "ਫੀਡਬੈਕ ਜਮ੍ਹਾਂ ਕਰੋ",
+        "footer_text": "ਸਾਨੂੰ ਬਿਹਤਰ ਬਣਾਉਣ ਵਿੱਚ ਸਹਾਇਤਾ ਕਰਨ ਲਈ ਧੰਨਵਾਦ!"
+    }
 }
